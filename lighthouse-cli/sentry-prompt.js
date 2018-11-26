@@ -6,7 +6,7 @@
 'use strict';
 
 const Configstore = require('configstore');
-const inquirer = require('inquirer');
+const inquirer = require('enquirer');
 
 const log = require('lighthouse-logger');
 
@@ -40,8 +40,6 @@ function prompt() {
 
   const timeoutPromise = new Promise((resolve) => {
     timeout = setTimeout(() => {
-      // @ts-ignore Promise returned by prompt is decorated with `ui`
-      prompt.ui.close();
       process.stdout.write('\n');
       log.warn('CLI', 'No response to error logging preference, errors will not be reported.');
       resolve(false);
