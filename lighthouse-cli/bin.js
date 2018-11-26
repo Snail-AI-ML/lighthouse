@@ -31,7 +31,7 @@ const log = require('lighthouse-logger');
 const pkg = require('../package.json');
 const Sentry = require('../lighthouse-core/lib/sentry');
 
-const updateNotifier = require('update-notifier');
+// const updateNotifier = require('update-notifier');
 const askPermission = require('./sentry-prompt').askPermission;
 
 /**
@@ -42,7 +42,7 @@ function isDev() {
 }
 
 // Tell user if there's a newer version of LH.
-updateNotifier({pkg}).notify();
+// updateNotifier({pkg}).notify();
 
 const cliFlags = getFlags();
 
